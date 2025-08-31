@@ -1,28 +1,8 @@
-import { useEffect, useState } from "react";
-import { Container, Row, Col, Card, Button, Collapse } from "react-bootstrap";
-import { FaGithub, FaChevronDown } from "react-icons/fa";
-
-type Project = {
-  id: string;
-  title: string;
-  description: string;
-  homepage: string;
-  html_url: string;
-  tech: string[];
-};
-
-// Mapeo de topics a badges
-const topicToBadge: { [key: string]: string } = {
-  react: "https://img.shields.io/badge/react-%2320232a.svg?style=flat&logo=react&logoColor=%2361DAFB",
-  bootstrap: "https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=flat&logo=bootstrap&logoColor=white",
-  typescript: "https://img.shields.io/badge/typescript-%23007ACC.svg?style=flat&logo=typescript&logoColor=white",
-  javascript: "https://img.shields.io/badge/javascript-%23323330.svg?style=flat&logo=javascript&logoColor=%23F7DF1E",
-  html5: "https://img.shields.io/badge/html5-%23E34F26.svg?style=flat&logo=html5&logoColor=white",
-  css3: "https://img.shields.io/badge/css3-%231572B6.svg?style=flat&logo=css3&logoColor=white",
-  nodejs: "https://img.shields.io/badge/node.js-6DA55F?style=flat&logo=node.js&logoColor=white",
-  express: "https://img.shields.io/badge/express.js-%23404d59.svg?style=flat&logo=express&logoColor=%2361DAFB",
-  electron: "https://img.shields.io/badge/electron-191970.svg?style=flat&logo=Electron&logoColor=white",
-};
+import { useEffect, useState } from 'react';
+import { Container, Row, Col, Card, Button, Collapse } from 'react-bootstrap';
+import { FaGithub, FaChevronDown } from 'react-icons/fa';
+import { topicToBadge } from './topicsBadges/topicsBadges';
+import type { Project } from './types/project.type';
 
 export default function App() {
   const [projects, setProjects] = useState<Project[]>([]);
@@ -83,23 +63,26 @@ export default function App() {
                   variant="primary"
                   href={project.homepage || project.html_url}
                   target="_blank"
-                  className="mb-2"
+                  className="mb-2 w-100 w-md-50"
+                  style={{ padding:'.6rem 0rem', fontSize:'1.3rem' }}
+                
                 >
-                  Ir Proyecto
+                  Ir al Proyecto
                 </Button>
 
-                {/* Icono para desplegar detalles */}
-                <div
-                  onClick={() => toggleProject(project.id)}
-                  style={{
-                    cursor: "pointer",
-                    display: "inline-block",
-                    transition: "transform 0.3s",
-                    transform: openProjects[project.id] ? "rotate(180deg)" : "rotate(0deg)",
-                  }}
-                  aria-expanded={!!openProjects[project.id]}
-                >
-                  <FaChevronDown size={24} />
+                <div style={{ display:'flex', justifyContent:'right' }}>
+                  {/* Icono para desplegar detalles */}
+                  <div
+                    onClick={() => toggleProject(project.id)}
+                    style={{
+                      cursor: "pointer",
+                      transition: "transform 0.3s",
+                      transform: openProjects[project.id] ? "rotate(180deg)" : "rotate(0deg)",
+                    }}
+                    aria-expanded={!!openProjects[project.id]}
+                  >
+                    <FaChevronDown size={24} />
+                  </div>
                 </div>
 
                 {/* Collapse para detalles */}
@@ -121,7 +104,7 @@ export default function App() {
                     <hr />
                     <Button
                       variant="outline-dark"
-                      size="sm"
+                      size="sm" 
                       href={project.html_url}
                       target="_blank"
                     >
