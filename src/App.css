@@ -40,3 +40,38 @@
 .read-the-docs {
   color: #888;
 }
+
+.accordion-no-border .accordion-item {
+  border: 0 !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+}
+
+.accordion-no-border .accordion-item::before {
+  display: none !important;
+}
+
+.accordion-no-border .accordion-header {
+  border: 0 !important;
+  background-color: transparent !important;
+  padding: 0 !important;
+}
+
+.accordion-no-border .accordion-button {
+  background-color: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  padding: 0.25rem 0 !important;
+  color: inherit !important;
+}
+
+.accordion-no-border .accordion-button:focus,
+.accordion-no-border .accordion-button:not(.collapsed) {
+  box-shadow: none !important;
+  outline: none !important;
+  background-color: transparent !important;
+}
+
+.accordion-no-border .accordion-button::after {
+  display: none !important;
+}
