@@ -9,13 +9,13 @@ export default function App() {
   const [openProjects, setOpenProjects] = useState<{ [key: string]: boolean }>({});
 
   useEffect(() => {
-    fetch("https://api.github.com/users/ismaelmarot/repos?per_page=100", {
-      headers: { Accept: "application/vnd.github.mercy-preview+json" },
+    fetch('https://api.github.com/users/ismaelmarot/repos?per_page=100', {
+      headers: { Accept: 'application/vnd.github.mercy-preview+json' },
     })
       .then((res) => res.json())
       .then((data) => {
         const filtered = data.filter((repo: any) =>
-          repo.topics?.includes("show-portfolio")
+          repo.topics?.includes('show-portfolio')
         );
 
         const mapped: Project[] = filtered.map((repo: any) => {
