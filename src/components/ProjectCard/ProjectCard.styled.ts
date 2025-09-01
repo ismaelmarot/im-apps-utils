@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Button, Card } from 'react-bootstrap';
 import { FaChevronDown } from 'react-icons/fa';
-import type { ChevronProps } from '../interface/ChevronProps';
+import type { ChevronProps } from '../../interface/ChevronProps';
 
 export const StyledCard = styled(Card)`
   height: 100%;

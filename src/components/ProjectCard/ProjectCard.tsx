@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Collapse } from 'react-bootstrap';
 import { FaGithub } from 'react-icons/fa';
-import type { ProjectCardProps } from '../interface/ProjectCardProps';
+
 import {
   StyledCard,
   CardBody,
@@ -11,25 +11,19 @@ import {
   ChevronContainer,
   ChevronDownStyled,
   QRImage,
-  QrAndTitleContainer
 } from './ProjectCard.styled';
-import qrImage from '../assets/im-apps-utils.svg';
+import qrImage from '../../assets/im-apps-utils.svg';
+import type { ProjectCardProps } from '../../interface/ProjectCardProps';
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
   const [open, setOpen] = useState(false);
 
   return (
     <StyledCard>
-      <CardBody>
-        {/* <QrAndTitleContainer> */}
-          
+      <CardBody> 
           <CardTitleStyled>{project.title}</CardTitleStyled>
           <QRImage src={qrImage} alt='QR' />
-        
-        {/* </QrAndTitleContainer> */}
-        
         <ProjectButton
-          // variant='primary'
           href={`https://ismaelmarot.github.io/${project.id}/#/general`}
           target='_blank'
         >
@@ -46,7 +40,6 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             <hr style={{ color:'white' }} />
             <div className='col-6'>
               <RepoButton
-                // variant='outline-dark'
                 size='sm'
                 href={`https://github.com/ismaelmarot/${project.id}`}
                 target='_blank'

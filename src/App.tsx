@@ -3,7 +3,9 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { allowedProjects } from './projectsConfig/projectsConfig';
 import type { ProjectFromAPI } from './interface/ProjectFromAPI';
 import { topicToBadgeConfig } from './constants/topicToBadgeConfig';
-import ProjectCard from './components/ProjectCard';
+import ProjectCard from './components/ProjectCard/ProjectCard';
+import Footer from './components/Footer/Footer';
+import { MdHeight } from 'react-icons/md';
 
 function App() {
   const [projects, setProjects] = useState<typeof allowedProjects>([]);
@@ -42,7 +44,8 @@ function App() {
   }, []);
 
   return (
-    <Container className='py-5' style={{ width: '100vw' }}>
+    <div style={{ height:'100vh', display:'flex', flexDirection:'column', justifyContent:'space-between' }}>
+    <Container style={{ width: '100vw' }}>
       <h1 className='text-center mb-4'>iM Apps Utils</h1>
       <p className='text-center mb-5'>
         Bienvenido.<br />
@@ -57,6 +60,8 @@ function App() {
         ))}
       </Row>
     </Container>
+    <Footer />
+    </div>
   );
 }
 
