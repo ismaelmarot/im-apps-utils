@@ -10,7 +10,8 @@ import {
   RepoButton,
   ChevronContainer,
   ChevronDownStyled,
-  QRImage
+  QRImage,
+  QrAndTitleContainer
 } from './ProjectCard.styled';
 import qrImage from '../assets/im-apps-utils.svg';
 
@@ -20,11 +21,15 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
     <StyledCard>
       <CardBody>
-        <CardTitleStyled>{project.title}</CardTitleStyled>
-        <QRImage src={qrImage} alt='QR' />
+        {/* <QrAndTitleContainer> */}
+          
+          <CardTitleStyled>{project.title}</CardTitleStyled>
+          <QRImage src={qrImage} alt='QR' />
+        
+        {/* </QrAndTitleContainer> */}
         
         <ProjectButton
-          variant='primary'
+          // variant='primary'
           href={`https://ismaelmarot.github.io/${project.id}/#/general`}
           target='_blank'
         >
@@ -32,16 +37,16 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         </ProjectButton>
 
         <ChevronContainer onClick={() => setOpen(prev => !prev)}>
-          <ChevronDownStyled size={15} open={open} />
+          <ChevronDownStyled size={22} open={open} />
         </ChevronContainer>
 
         <Collapse in={open}>
           <div className='mt-2 text-start'>
-            <p style={{ paddingLeft: '.5rem' }}>{project.description}</p>
-            <hr />
+            <p style={{ paddingLeft: '.5rem', color:'white' }}>{project.description}</p>
+            <hr style={{ color:'white' }} />
             <div className='col-6'>
               <RepoButton
-                variant='outline-dark'
+                // variant='outline-dark'
                 size='sm'
                 href={`https://github.com/ismaelmarot/${project.id}`}
                 target='_blank'
@@ -49,7 +54,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                 <FaGithub className='me-1' /> Ver Repo
               </RepoButton>
             </div>
-            <hr />
+            <hr style={{ color:'white' }} />
             <div className='mb-2'>
               {project.tech.map((badge, i) => (
                 <img key={i} src={badge} alt='tech badge' className='mx-1' height={20} />
