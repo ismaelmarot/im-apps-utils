@@ -55,6 +55,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             </div>
           </div>
         </Collapse>
+        
       </CardBody>
     </StyledCard>
   );

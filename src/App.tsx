@@ -5,7 +5,6 @@ import type { ProjectFromAPI } from './interface/ProjectFromAPI';
 import { topicToBadgeConfig } from './constants/topicToBadgeConfig';
 import ProjectCard from './components/ProjectCard/ProjectCard';
 import Footer from './components/Footer/Footer';
-import { MdHeight } from 'react-icons/md';
 
 function App() {
   const [projects, setProjects] = useState<typeof allowedProjects>([]);
@@ -44,23 +43,26 @@ function App() {
   }, []);
 
   return (
-    <div style={{ height:'100vh', display:'flex', flexDirection:'column', justifyContent:'space-between' }}>
-    <Container style={{ width: '100vw' }}>
-      <h1 className='text-center mb-4'>iM Apps Utils</h1>
-      <p className='text-center mb-5'>
-        Bienvenido.<br />
-        Aquí encontrarás enlaces a proyectos de utilidades publicados en mi GitHub Pages.
-      </p>
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <Container style={{ flex: 1, width: '100vw' }}>
+        <h1 className='text-center mb-4'>iM Apps Utils</h1>
+        <p className='text-center mb-5'>
+          Bienvenido.<br />
+          Aquí encontrarás enlaces a proyectos de utilidades publicados en mi GitHub Pages.
+        </p>
 
-      <Row xs={1} md={2} lg={3} className='g-4'>
-        {projects.map(project => (
-          <Col key={project.id}>
-            <ProjectCard project={project} />
-          </Col>
-        ))}
-      </Row>
-    </Container>
-    <Footer />
+        <Row xs={1} md={2} lg={3} className='g-4'>
+          {projects.map(project => (
+            <Col key={project.id}>
+              <ProjectCard project={project} />
+            </Col>
+          ))}
+        </Row>
+      </Container>
+
+      <div style={{ marginTop: 'auto' }}>
+        <Footer />
+      </div>
     </div>
   );
 }
