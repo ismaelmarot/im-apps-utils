@@ -1,6 +1,6 @@
-import type { ProjectInteface } from '../interface/ProjectInterface';
+import { type ProjectInterface } from '../interface/ProjectInterface';
 
-export const allowedProjects: ProjectInteface[] = [
+export const allowedProjects: ProjectInterface[] = [
     {
         id: 'product-entry-app',
         title: 'Product Entry App',

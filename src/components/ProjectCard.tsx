@@ -36,14 +36,16 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           <div className='mt-2 text-start'>
             <p style={{ paddingLeft: '.5rem' }}>{project.description}</p>
             <hr />
-            <RepoButton
-              variant='outline-dark'
-              size='sm'
-              href={`https://github.com/ismaelmarot/${project.id}`}
-              target='_blank'
-            >
-              <FaGithub className='me-1' /> Ver Repo
-            </RepoButton>
+            <div className='col-6'>
+              <RepoButton
+                variant='outline-dark'
+                size='sm'
+                href={`https://github.com/ismaelmarot/${project.id}`}
+                target='_blank'
+              >
+                <FaGithub className='me-1' /> Ver Repo
+              </RepoButton>
+            </div>
             <hr />
             <div className='mb-2'>
               {project.tech.map((badge, i) => (

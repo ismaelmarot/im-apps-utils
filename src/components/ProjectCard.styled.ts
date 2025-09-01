@@ -24,11 +24,6 @@ export const CardTitleStyled = styled(Card.Title)`
 export const ProjectButton = styled(Button)`
   margin: 1rem;
   font-size: 1rem;
-  width: 50%;
-
-  @media (max-width: 768px) {
-    width: 100%;
-  }
 `;
 
 export const RepoButton = styled(Button)`
@@ -38,11 +33,7 @@ export const RepoButton = styled(Button)`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
 
-  @media (max-width: 768px) {
-    width: 100%;
-  }
 `;
 
 export const ChevronContainer = styled.div`
