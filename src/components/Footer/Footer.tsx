@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
 
     return (
         <>
-        <footer className='container py-3 border-top' style={{ fontSize: '.8rem' }}>
+        <footer className='container py-3 border-top' style={{ fontSize: '.8rem', marginTop:'1rem' }}>
             <div className='row align-items-center text-center text-md-start'>
                 <div className='col-12 col-md-6 mb-2 mb-md-0'>
                     <p className='mb-0'>
