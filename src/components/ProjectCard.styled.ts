@@ -48,3 +48,10 @@ export const ChevronDownStyled = styled(FaChevronDown)<ChevronProps>`
   transition: transform 0.3s;
   transform: ${({ open }) => (open ? 'rotate(180deg)' : 'rotate(0deg)')};
 `;
+
+export const QRImage = styled.img`
+  width: 120px;
+  margin: 0.5rem 0;
+  border: 1px solid #222f3e;
+  border-radius: 5px;
+`;

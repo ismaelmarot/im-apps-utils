@@ -9,8 +9,10 @@ import {
   ProjectButton,
   RepoButton,
   ChevronContainer,
-  ChevronDownStyled
+  ChevronDownStyled,
+  QRImage
 } from './ProjectCard.styled';
+import qrImage from '../assets/im-apps-utils.svg';
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
   const [open, setOpen] = useState(false);
@@ -19,7 +21,8 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
     <StyledCard>
       <CardBody>
         <CardTitleStyled>{project.title}</CardTitleStyled>
-
+        <QRImage src={qrImage} alt='QR' />
+        
         <ProjectButton
           variant='primary'
           href={`https://ismaelmarot.github.io/${project.id}/#/general`}
