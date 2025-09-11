@@ -19,11 +19,13 @@ function App() {
           const repo = data.find(r => r.name === ap.id);
           let badges: string[] = [];
 
-          if (repo && repo.topics.length > 0) {
+          if (repo && repo.topics && repo.topics.length > 0) {
             badges = repo.topics.map(topic => {
               const cfg = topicToBadgeConfig[topic.toLowerCase()];
               if (cfg) {
-                return `https://img.shields.io/badge/${encodeURIComponent(topic)}-${cfg.color}?style=flat&logo=${cfg.logo}&logoColor=white`;
+                return `https://img.shields.io/badge/${encodeURIComponent(
+                  topic
+                )}-${cfg.color}?style=flat&logo=${cfg.logo}&logoColor=white`;
               }
               return `https://img.shields.io/badge/${encodeURIComponent(topic)}-007bff?style=flat`;
             });
@@ -34,7 +36,8 @@ function App() {
           return {
             ...ap,
             tech: badges,
-            description: repo?.description || ap.description
+            description: repo?.description || ap.description,
+            qrImage: ap.qrImage || ''
           };
         });
         setProjects(mapped);
