@@ -47,7 +47,7 @@ function App() {
 
   return (
     <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <Container style={{ flex: 1, width: '100vw' }}>
+      <Container style={{ flex: 1, width: '100vw', paddingBottom: '3rem' }}>
         <h1 className='text-center mb-4'>iM Apps Utils</h1>
         <p className='text-center mb-5'>
           Bienvenido.<br />
