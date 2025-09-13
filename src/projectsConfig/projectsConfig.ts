@@ -21,4 +21,14 @@ export const allowedProjects: ProjectInterface[] = [
       'https://img.shields.io/badge/typescript-%23007ACC.svg?style=flat&logo=typescript&logoColor=white',
     ],
   },
+  {
+    id: 'cash-counter',
+    title: 'Cash Counter',
+    description: 'Web application for Cash Counter.',
+    qrImage: `${import.meta.env.BASE_URL}assets/cash-counter-qr.svg`,
+    tech: [
+      'https://img.shields.io/badge/vite-%234BC0F0.svg?style=flat&logo=vite&logoColor=white',
+      'https://img.shields.io/badge/typescript-%23007ACC.svg?style=flat&logo=typescript&logoColor=white',
+    ],
+  },
 ];
