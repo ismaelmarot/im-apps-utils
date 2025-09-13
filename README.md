@@ -1,69 +1,28 @@
-# React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+<table>
+  <tr>
+    <td style="padding:10px; border:1px solid #ccc; vertical-align: top;">
+      <div style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start;">
+        <a href="https://ismaelmarot.github.io/products-exit-app/#/general">
+          <img src="https://img.shields.io/badge/🚀%20Ir%20a%20la%20aplicación-blue?style=for-the-badge&logoWidth=20" width="200">
+        </a>
+        <img src="public/screenshotApps/screenshot_Products-Exit-App.png" width="300" alt="Products Exit App Screenshot">
+      </div>
+    </td>
+    <td style="padding:10px; border:1px solid #ccc; vertical-align: top;">
+      <div style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start;">
+        <a href="https://ismaelmarot.github.io/product-entry-app/#/general">
+          <img src="https://img.shields.io/badge/🚀%20Ir%20a%20la%20aplicación-blue?style=for-the-badge&logoWidth=20" width="200">
+        </a>
+        <img src="public/screenshotApps/screenshot_Products-Entry-App.png" width="300" alt="Products Entry App Screenshot">
+      </div>
+    </td>
+    <td style="padding:10px; border:1px solid #ccc; vertical-align: top;">
+      <div style="display: flex; flex-direction: column; align-items: center; justify-content: flex-start;">
+        <a href="https://ismaelmarot.github.io/cash-counter">
+          <img src="https://img.shields.io/badge/🚀%20Ir%20a%20la%20aplicación-blue?style=for-the-badge&logoWidth=20" width="200">
+        </a>
+        <img src="public/screenshotApps/screenshot_Cash-Counter.png" width="300" alt="Cash Counter Screenshot">
+      </div>
+    </td>
+  </tr>
+</table>
