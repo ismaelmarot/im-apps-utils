@@ -1,10 +1,17 @@
 import { useEffect, useState } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import { allowedProjects } from './projectsConfig/projectsConfig';
 import type { ProjectFromAPI } from './interface/ProjectFromAPI';
 import { topicToBadgeConfig } from './constants/topicToBadgeConfig';
 import ProjectCard from './components/ProjectCard/ProjectCard';
 import Footer from './components/Footer/Footer';
+import {
+  AppWrapper,
+  Container,
+  Title,
+  Subtitle,
+  FooterWrapper
+} from './App.styled';
 
 function App() {
   const [projects, setProjects] = useState<typeof allowedProjects>([]);
@@ -46,13 +53,13 @@ function App() {
   }, []);
 
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
-      <Container style={{ flex: 1, width: '100vw', paddingBottom: '3rem' }}>
-        <h1 className='text-center mb-4'>iM Apps Utils</h1>
-        <p className='text-center mb-5'>
-          Bienvenido.<br />
-          Aquí encontrarás enlaces a proyectos de utilidades publicados en mi GitHub Pages.
-        </p>
+    <AppWrapper>
+      <Container>
+        <Title>iM Apps Utils</Title>
+        <Subtitle>
+          Welcome!<br />
+          Here you'll find links to utility projects published on my GitHub Pages.
+        </Subtitle>
 
         <Row xs={1} md={2} lg={3} className='g-4'>
           {projects.map(project => (
@@ -63,10 +70,10 @@ function App() {
         </Row>
       </Container>
 
-      <div style={{ marginTop: 'auto' }}>
+      <FooterWrapper>
         <Footer />
-      </div>
-    </div>
+      </FooterWrapper>
+    </AppWrapper>
   );
 }
 
