@@ -9,13 +9,8 @@ const Footer: React.FC = () => {
 
     return (
         <>
-<<<<<<< HEAD
-        <footer className='container py-3 border-top' style={{ fontSize: '.8rem', marginTop:'1rem' }}>
-            <div className='row align-items-center text-center text-md-start'>
-=======
         <footer className='container py-3 border-top' style={{ fontSize: '.8rem' }}>
             <div className='row align-items-center text-center text-md-start' style={{color:'rgba(222, 226, 230, 1)'}}>
->>>>>>> 0ab75791c4cf9f90d0018eb536da47bc8e78641b
                 <div className='col-12 col-md-6 mb-2 mb-md-0'>
                     <p className='mb-0'>
                     © {getCurrentYear()} Designed and developed by Ismael Marot. All rights reserved.
