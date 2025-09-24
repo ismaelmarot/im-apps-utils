@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Collapse } from 'react-bootstrap';
 import { FaGithub } from 'react-icons/fa';
-
+import type { ProjectCardProps } from '../../interface/ProjectCardProps';
 import {
   StyledCard,
   CardBody,
@@ -12,20 +12,20 @@ import {
   ChevronDownStyled,
   QRImage,
 } from './ProjectCard.styled';
-import qrImage from '../../assets/im-apps-utils.svg';
-import type { ProjectCardProps } from '../../interface/ProjectCardProps';
 
 const ProjectCard = ({ project }: ProjectCardProps) => {
   const [open, setOpen] = useState(false);
 
   return (
     <StyledCard>
-      <CardBody> 
-          <CardTitleStyled>{project.title}</CardTitleStyled>
-          <QRImage src={qrImage} alt='QR' />
+      <CardBody>
+        <CardTitleStyled>{project.title}</CardTitleStyled>
+
+        {project.qrImage && <QRImage src={project.qrImage} alt="QR" />}
+
         <ProjectButton
           href={`https://ismaelmarot.github.io/${project.id}/#/general`}
-          target='_blank'
+          target="_blank"
         >
           Ir al Proyecto
         </ProjectButton>
@@ -35,27 +35,34 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         </ChevronContainer>
 
         <Collapse in={open}>
-          <div className='mt-2 text-start'>
-            <p style={{ paddingLeft: '.5rem', color:'white' }}>{project.description}</p>
-            <hr style={{ color:'white' }} />
-            <div className='col-6'>
+          <div className="mt-2 text-start">
+            <p style={{ paddingLeft: '.5rem', color: 'white' }}>
+              {project.description}
+            </p>
+            <hr style={{ color: 'white' }} />
+            <div className="col-6">
               <RepoButton
-                size='sm'
+                size="sm"
                 href={`https://github.com/ismaelmarot/${project.id}`}
-                target='_blank'
+                target="_blank"
               >
-                <FaGithub className='me-1' /> Ver Repo
+                <FaGithub className="me-1" /> Ver Repo
               </RepoButton>
             </div>
-            <hr style={{ color:'white' }} />
-            <div className='mb-2'>
+            <hr style={{ color: 'white' }} />
+            <div className="mb-2">
               {project.tech.map((badge, i) => (
-                <img key={i} src={badge} alt='tech badge' className='mx-1' height={20} />
+                <img
+                  key={i}
+                  src={badge}
+                  alt="tech badge"
+                  className="mx-1"
+                  height={20}
+                />
               ))}
             </div>
           </div>
         </Collapse>
-        
       </CardBody>
     </StyledCard>
   );

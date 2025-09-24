@@ -9,8 +9,13 @@ const Footer: React.FC = () => {
 
     return (
         <>
+<<<<<<< HEAD
         <footer className='container py-3 border-top' style={{ fontSize: '.8rem', marginTop:'1rem' }}>
             <div className='row align-items-center text-center text-md-start'>
+=======
+        <footer className='container py-3 border-top' style={{ fontSize: '.8rem' }}>
+            <div className='row align-items-center text-center text-md-start' style={{color:'rgba(222, 226, 230, 1)'}}>
+>>>>>>> 0ab75791c4cf9f90d0018eb536da47bc8e78641b
                 <div className='col-12 col-md-6 mb-2 mb-md-0'>
                     <p className='mb-0'>
                     © {getCurrentYear()} Designed and developed by Ismael Marot. All rights reserved.
@@ -19,7 +24,8 @@ const Footer: React.FC = () => {
                 <div className='col-12 col-md-6'>
                     <nav className='d-flex justify-content-center justify-content-md-end align-items-center'>
                         <button 
-                            className='btn btn-link px-2 text-decoration-none' 
+                            className='btn btn-link px-2 text-decoration-none'
+                            style={{color:'rgba(222, 226, 230, 1)'}}
                             onClick={() => setShowLegal(true)}
                         >
                             Legal
@@ -27,6 +33,7 @@ const Footer: React.FC = () => {
                         <span className='d-md-inline' style={{color: 'rgba(222, 226, 230, 1)', fontWeight:'bolder'}}>|</span>
                         <button 
                             className='btn btn-link px-2 text-decoration-none'
+                            style={{color:'rgba(222, 226, 230, 1)'}}
                             onClick={() => setShowTerms(true)}
                         >
                             Terms of Use
